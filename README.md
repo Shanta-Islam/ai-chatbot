@@ -1,53 +1,64 @@
-# AI Chatbot — React + PHP + MySQL
+# AI Chatbot 🤖
 
-A starter full-stack AI chatbot project with:
-- React frontend (Vite)
-- PHP REST API
-- MySQL conversation/message storage
-- OpenAI-compatible Chat Completions API integration
-- Environment-based API key configuration
+A full-stack AI chatbot powered by **React, PHP, MySQL, and Groq AI**. This project provides an AI-powered conversational experience with persistent chat history and conversation management.
 
-## Requirements
-- PHP 8.1+ with `curl` and `pdo_mysql` extensions
-- MySQL 8+ or MariaDB
-- Node.js 18+
-- An API key for an OpenAI-compatible chat API
+## ✨ Features
 
-## 1. Database setup
-Create the database and tables by importing `database/schema.sql` into MySQL.
+* 🤖 AI-powered conversations using Groq AI
+* 💬 Interactive chat interface
+* 🗂️ Conversation management
+* 💾 Persistent chat history with MySQL
+* ⚡ Responsive React frontend
+* 🔗 PHP backend API
+* 📡 JSON-based API communication
 
-## 2. Configure the PHP backend
-Copy `backend/.env.example` to `backend/.env` and fill in your database settings and API key.
+## 🛠️ Tech Stack
 
-Do not commit `backend/.env` to GitHub. The included `.gitignore` excludes it.
+* **Frontend:** React, Vite
+* **Backend:** PHP
+* **Database:** MySQL
+* **AI Integration:** Groq API
+* **Frontend Hosting:** Vercel
+* **Backend Hosting:** InfinityFree
 
-Run the PHP development server from the project root:
-```bash
-php -S localhost:8000 -t backend
+## 🌐 Live Demo
+
+* **Frontend:** https://ai-chatbot-sage-rho.vercel.app/
+* **Backend API:** https://aichatbot.ifree.page/backend/api.php
+
+## 🔌 API Endpoints
+
+| Method | Endpoint                                    | Description                               |
+| ------ | ------------------------------------------- | ----------------------------------------- |
+| GET    | `api.php?action=conversations`              | Retrieve conversations                    |
+| GET    | `api.php?action=messages&conversation_id=1` | Retrieve conversation messages            |
+| POST   | `api.php?action=chat`                       | Send a message and receive an AI response |
+
+## 📁 Project Structure
+
+```text
+ai-chatbot/
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+├── backend/
+│   ├── api.php
+│   └── config.php
+└── README.md
 ```
 
-The API will be available at `http://localhost:8000/api.php`.
+## 🎯 Project Goal
 
-## 3. Run the React frontend
-In a second terminal:
-```bash
-cd frontend
-npm install
-npm run dev
-```
-Open the local URL Vite prints (usually `http://localhost:5173`).
+The goal of this project is to demonstrate the integration of a modern frontend, a PHP backend, a MySQL database, and an AI API to build an interactive chatbot application.
 
-## API behavior
-- `GET api.php?action=conversations` — list recent conversations
-- `POST api.php?action=chat` — send `{ "message": "...", "conversation_id": 1 }`
-- `GET api.php?action=messages&conversation_id=1` — fetch conversation messages
+## 👨‍💻 Author
 
-The backend creates a new conversation if `conversation_id` is omitted.
+**Shanta Islam**
 
-## Security notes
-- This is a learning starter, not production-ready.
-- Add authentication and authorization before allowing multiple users.
-- Use HTTPS in production and configure CORS for your real frontend origin.
-- Set request limits, rate limiting, logging, and stronger input validation before deployment.
-- Keep API keys on the server only; never place them in React/Vite environment variables.
-- Never upload real secrets or `.env` files to GitHub.
+GitHub: [Shanta-Islam](https://github.com/Shanta-Islam)
+
+---
+
+⭐ If you find this project interesting, consider giving the repository a star.
